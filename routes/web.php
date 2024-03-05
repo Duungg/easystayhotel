@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\BaiVietController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::prefix('admin')
+    ->as('admin.')
+    ->group(function () {
+        Route::resource('bai_viet', BaiVietController::class);
+    });
