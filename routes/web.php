@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\Backend\BaiVietController;
+use App\Http\Controllers\Backend\KhachSanController;
+use App\Http\Controllers\Backend\LoaiPhongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +28,6 @@ Route::prefix('admin')
     ->as('admin.')
     ->group(function () {
         Route::resource('bai_viet', BaiVietController::class);
+        Route::resource('khach_san',KhachSanController::class);
+        Route::resource('loai_phong',LoaiPhongController::class);
     });
