@@ -11,16 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('chi_tiet_don_dats', function (Blueprint $table) {
             $table->id();
-            $table->string('ten_nguoi_dung');
-            $table->string('email')->unique();
-            $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
-            $table->string('dia_chi');
+            $table->bigInteger('id_phong')->constrainer();
+            $table->bigInteger('id_don_dat')->constrainer();
+            $table->string('CMND');
+            $table->string('ten');
             $table->string('so_dien_thoai');
-            $table->bigInteger('id_vai_tro')->constrained();
-            $table->rememberToken();
+            $table->bigInteger('gioi_han_nguoi');
+            $table->bigInteger('slg_phong');
+            $table->decimal('tong_tien');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('chi_tiet_don_dats');
     }
 };
