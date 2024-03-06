@@ -24,10 +24,9 @@
                     @csrf
                     @method('delete')
                     <a class="btn btn-warning" href="{{route('admin.phong.edit',$item)}}">SỬA</a>
-                    <button class="btn btn-danger">XÓA</button>
+                    <button  class="btn btn-danger" onclick="return confirm('Bạn có muốn xóa không ?')">XÓA</button>
                 </form>
             </td>
-            
         </tr>
         @endforeach
     </tbody>

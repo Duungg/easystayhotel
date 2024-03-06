@@ -4,23 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes; // add soft delete
 
-class Phong extends Model
+class Anh_phong extends Model
 {
-    use HasFactory;
-
-    const CON_PHONG = 1;
-    const HET_PHONG = 0;
+    use HasFactory,
+        SoftDeletes;
 
     protected $fillable = [
-        'ten_phong',
+        'anh',
         'loai_phong_id',
-        'gioi_han_nguoi',
-        'mo_ta',
-        'trang_thai',
     ];
 
     protected function loai_phong(){
         return $this->belongsTo(Loai_phong::class);
     }
+
 }
