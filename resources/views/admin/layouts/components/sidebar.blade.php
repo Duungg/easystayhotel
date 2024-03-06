@@ -52,10 +52,10 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item"><a href="" class="nav-link"><i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item"><a href="{{route('admin.phong.index')}}" class="nav-link"><i class="nav-icon bi bi-circle"></i>
                                 <p>Danh sách</p>
                             </a></li>
-                        <li class="nav-item"><a href="" class="nav-link"><i class="nav-icon bi bi-circle"></i>
+                        <li class="nav-item"><a href="{{route('admin.phong.create')}}" class="nav-link"><i class="nav-icon bi bi-circle"></i>
                                 <p>Tạo mới</p>
                             </a></li>
 

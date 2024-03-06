@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('anh');
             $table->decimal('gia');
             $table->decimal('gia_km')->nullable();
+            $table->integer('gioi_han_nguoi');
             $table->integer('so_lg');
             $table->string('mo_ta');
             $table->boolean('trang_thai')->default(1);
