@@ -15,6 +15,9 @@
     <label class="mt-3" for="gia_km">Giá khuyến mãi</label>
     <input type="text" id="gia_km" name="gia_km" class="form-control">
 
+    <label class="mt-3" for="gia_km">Giới hạn người</label>
+    <input type="text" id="gioi_han_nguoi" name="gioi_han_nguoi" class="form-control">
+
     <label class="mt-3" for="so_lg">Số lượng</label>
     <input type="text" id="so_lg" name="so_lg" class="form-control">
 

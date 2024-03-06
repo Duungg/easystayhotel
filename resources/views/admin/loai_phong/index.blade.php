@@ -9,6 +9,7 @@
                 <th>Ảnh</th>
                 <th>Giá</th>
                 <th>Giá khuyến mãi</th>
+                <th>Giới hạn người</th>
                 <th>Số lượng</th>
                 <th>Mô tả</th>
                 <th>Trạng thái</th>
@@ -25,6 +26,7 @@
                 </td>
                 <td>{{$item->gia}}</td>
                 <td>{{$item->gia_km}}</td>
+                <td>{{$item->gioi_han_nguoi}}</td>
                 <td>{{$item->so_lg}}</td>
                 <td>{{$item->mo_ta}}</td>
                 <td>{{$item->trang_thai}}</td>

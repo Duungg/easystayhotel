@@ -46,7 +46,7 @@ class LoaiPhongController extends Controller
      */
     public function show(Loai_phong $loai_phong)
     {
-        return view(self::PATH_VIEW . __FUNCTION__, compact('loai_phong'));
+        //
     }
 
     /**
