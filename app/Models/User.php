@@ -6,13 +6,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-// use Illuminate\Database\Eloquent\SoftDeletes; // add soft delete
+use Illuminate\Database\Eloquent\SoftDeletes; // add soft delete
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    // use Notifiable,
-    //     SoftDeletes;// add soft delete
+    use Notifiable,
+        SoftDeletes;// add soft delete
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
@@ -45,4 +45,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+    protected function vai_tro(){
+        return $this->belongsTo(VaiTro::class);
+    }
 }

@@ -1,10 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\AnhPhongController;
-use App\Http\Controllers\Backend\BaiVietController;
-use App\Http\Controllers\Backend\KhachSanController;
-use App\Http\Controllers\Backend\LoaiPhongController;
-use App\Http\Controllers\Backend\PhongController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,16 +18,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('admin', function () {
-    return view('admin.dashboard');
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+Route::middleware('auth')->group(function () {
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::prefix('admin')
-    ->as('admin.')
-    ->group(function () {
-        Route::resource('bai_viet', BaiVietController::class);
-        Route::resource('khach_san',KhachSanController::class);
-        Route::resource('loai_phong',LoaiPhongController::class);
-        Route::resource('phong', PhongController::class);
-        Route::resource('anh_phong', AnhPhongController::class);
-    });
+require __DIR__.'/auth.php';
