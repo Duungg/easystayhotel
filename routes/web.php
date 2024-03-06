@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AnhPhongController;
 use App\Http\Controllers\Backend\BaiVietController;
 use App\Http\Controllers\Backend\KhachSanController;
 use App\Http\Controllers\Backend\LoaiPhongController;
@@ -32,4 +33,5 @@ Route::prefix('admin')
         Route::resource('khach_san',KhachSanController::class);
         Route::resource('loai_phong',LoaiPhongController::class);
         Route::resource('phong', PhongController::class);
+        Route::resource('anh_phong', AnhPhongController::class);
     });
