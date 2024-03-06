@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\Backend\BaiVietController;
+use App\Http\Controllers\Backend\KhachSanController;
+use App\Http\Controllers\Backend\LoaiPhongController;
+use App\Http\Controllers\Backend\PhongController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +20,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('admin', function () {
+    return view('admin.dashboard');
+});
+
+Route::prefix('admin')
+    ->as('admin.')
+    ->group(function () {
+        Route::resource('bai_viet', BaiVietController::class);
+        Route::resource('khach_san',KhachSanController::class);
+        Route::resource('loai_phong',LoaiPhongController::class);
+        Route::resource('phong', PhongController::class);
+    });
